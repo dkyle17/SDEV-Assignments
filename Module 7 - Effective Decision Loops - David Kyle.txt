@@ -1,0 +1,14 @@
+// Excercise 1 - Design the logic for a program that allows a user to continually enter numbers until the user enters 0. Display the sum of the numbers entered
+
+start
+   Declarations
+      num userInput
+      num total = 0
+   userInput = input("Type any number to begin or 0 to quit: ")
+   while userInput <> 0
+      total = total + userInput
+      output "Enter another number or press 0 to quit: "
+      input userInput
+   endwhile
+   output "The total sum of the entered numbers is ", total
+stop

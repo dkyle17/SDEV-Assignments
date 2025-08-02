@@ -1,0 +1,31 @@
+// Design a retirement planning calculator for Skulling Financial Services.
+// Allow a user to enter a value that represents the number of working years remaining in the user’s career and another value for the annual amount of money the user can save.
+// Assume that the user earns 3 percent simple interest on savings annually. Program output is a schedule that lists each year number in retirement starting with year 0 and the user’s savings at the start of that year.
+// Assume that the user spends $60,000 per year in retirement and then earns 3 percent interest on the remaining balance. End the list after 30 years or when the user’s balance is 0 or less, whichever comes first
+
+start
+   Declarations
+      int yearsWorking
+      int annualSavings
+      int annualSpending = 60000
+      float interest = 0.03
+      int retirementYears = 30
+      float totalSavings
+      int currentYear = 0
+
+   // Collect user inputs
+   yearsWorking = input("Input how many years are remaining in your career: ")
+   annualSavings = input("Input how much money is saved annually: ")
+
+   // Calculate ammount of savings generated including simple interest
+   totalSavings = yearsWorking * (annualSavings + (annualSavings * interest))
+
+   // Determine how much savings is remaining every year into retirement
+   while totalSavings > annualSpending && currentYear < 30
+      output "Savings balance remaining after ", currentYear, "year(s) is: ", totalSavings
+      totalSavings = (totalSavings - annualSpending)
+      totalSavings = totalSavings + (totalSavings * interest)
+      currentYear = currentYear + 1
+   endwhile
+   output "End of Calculations"
+stop
